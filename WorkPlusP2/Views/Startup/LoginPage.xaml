@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkPlusP2.Views.Startup.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Stroke="#920000" Fill="#920000"/>
+        
+        <StackLayout>
+            <Frame  BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100"  Padding="0" Margin="0,70,0,0" HorizontalOptions="Center" BorderColor="Transparent">
+                <Image Source="login.png" Aspect="AspectFill" Margin="0"></Image>
+            </Frame>
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="1" Text="Bienvenido a WorkPlus!" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0"/>
+
+            <Label Grid.Row="2" Text="Inicia Sesión para continuar" HorizontalOptions="Center" FontSize="Subtitle"/>
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="Black" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="#2980B9" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="user4.png"/>
+                        </Frame>
+                        <Entry Text="{Binding UserName}" Placeholder="Usuario" PlaceholderColor="Gray" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="Black" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="#2980B9" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="lock.png"/>
+                        </Frame>
+                        <Entry Text="{Binding Password}" Placeholder="Contraseña" PlaceholderColor="Gray" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="Iniciar Sesión" BackgroundColor="#2980B9" TextColor="White" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding LoginCommand}"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0" Padding="0">
+                    <Label Text="Usuario no registrado?" TextColor="Gray" FontAttributes="Bold" FontSize="Small"/>
+                    <Label Text="  Registrarse" FontAttributes="Bold" FontSize="Small" TextColor="#2980B9" />
+                </StackLayout>
+                
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
